@@ -1,8 +1,11 @@
-import "libs.dart" ;
+import 'package:mobile/messages/screens/Login_Page.dart';
 
+import "libs.dart";
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: LoginPage(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,11 +18,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: AuthScreen.RouteName,
       routes: {
-        AuthScreen.RouteName : (context){
+        AuthScreen.RouteName: (context) {
           return AuthScreen();
         }
       },
     );
   }
 }
-

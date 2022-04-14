@@ -56,7 +56,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             horizontal: 20,
           ),
           child: TextField(
-            inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
+            // inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
             keyboardType: TextInputType.number,
             cursorColor: Theme.of(context).primaryColorLight,
             controller: emailController,

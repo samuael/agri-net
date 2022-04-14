@@ -1,6 +1,4 @@
-import 'package:flutter/services.dart';
-
-import "../../libs.dart";
+import '../../libs.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String RouteName = "/subscriber/registration/page";
@@ -76,7 +74,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 horizontal: 20,
               ),
               child: TextField(
-                inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
+                // inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.number,
                 cursorColor: Theme.of(context).primaryColorLight,
                 controller: phoneController,
@@ -107,7 +105,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 horizontal: 20,
               ),
               child: TextField(
-                inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
+                // inputFormatters: [WhitelistingTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.number,
                 cursorColor: Theme.of(context).primaryColorLight,
                 controller: phoneController,

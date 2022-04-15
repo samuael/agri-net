@@ -1,4 +1,5 @@
 import '../../libs.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProductItem extends StatefulWidget {
   const ProductItem({Key? key}) : super(key: key);
@@ -17,70 +18,94 @@ class _ProductItemState extends State<ProductItem> {
         color: Color(0xFFEFFBFF),
         child: Container(
           //alignment: Alignment.center,
-          height: 150,
+          // height: 150,
           width: MediaQuery.of(context).size.width,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 8),
-                  margin: EdgeInsets.symmetric(horizontal: 120),
-                  child: Text("ነጭ ጤፍ",
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-                ),
-                Row(
-                  children: [
-                    Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Text("የምርት ቦታ :",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold))),
-                    Text(
-                      "ሁሉም",
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                  child: Row(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Expanded(
+                flex: 6,
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("ዋጋ :",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 60),
-                        child: Text(
-                          "1000 ብር",
-                          style: TextStyle(fontSize: 18),
+                        padding: EdgeInsets.symmetric(vertical: 8),
+                        margin: EdgeInsets.symmetric(horizontal: 120),
+                        child: Text("ነጭ ጤፍ",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              child: Text("የምርት ቦታ :",
+                                  style: TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.bold))),
+                          Text(
+                            "ሁሉም",
+                            style: TextStyle(fontSize: 13),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                        child: Row(
+                          children: [
+                            Text("ዋጋ :",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold)),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 45),
+                              child: Text(
+                                "1000 ብር",
+                                style: TextStyle(fontSize: 13),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("ከ ",
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
-                      Text("10 ደቂቃ ",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF29DE92))),
-                      Text(
-                        "በፊት",
-                        style: TextStyle(fontSize: 16),
+                      Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 5, horizontal: 40),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("ከ ",
+                                style: TextStyle(
+                                    fontSize: 13, fontWeight: FontWeight.bold)),
+                            Text("10 ደቂቃ ",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF29DE92))),
+                            Text(
+                              "በፊት",
+                              style: TextStyle(fontSize: 13),
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
+                    ]),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 45),
+                  child: SvgPicture.asset(
+                    'assets/icons/chevron_right_black_24dp.svg',
                   ),
                 ),
-              ]),
+              )
+            ],
+          ),
         ),
       ),
     );

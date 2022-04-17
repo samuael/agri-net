@@ -128,11 +128,12 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                       height: 40,
                       child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly,
+                            FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
                           textAlignVertical: TextAlignVertical.center,
-                          textAlign: TextAlign.center,keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number,
                           maxLength: 1,
                           controller: controller1,
                           cursorHeight: 25,
@@ -161,7 +162,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                       height: 40,
                       child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly,
+                            FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
                           decoration: InputDecoration(
@@ -169,7 +170,8 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           ),
                           keyboardType: TextInputType.number,
                           textAlignVertical: TextAlignVertical.center,
-                          textAlign: TextAlign.center,maxLength: 1,
+                          textAlign: TextAlign.center,
+                          maxLength: 1,
                           controller: controller2,
                           cursorHeight: 25,
                           cursorWidth: 3,
@@ -193,7 +195,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                       height: 40,
                       child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly,
+                            FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
                           decoration: InputDecoration(
@@ -201,7 +203,8 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           ),
                           keyboardType: TextInputType.number,
                           textAlignVertical: TextAlignVertical.center,
-                          textAlign: TextAlign.center,maxLength: 1,
+                          textAlign: TextAlign.center,
+                          maxLength: 1,
                           controller: controller3,
                           cursorHeight: 25,
                           cursorWidth: 3,
@@ -225,7 +228,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                       height: 40,
                       child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly,
+                            FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
                           decoration: InputDecoration(
@@ -233,7 +236,8 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           ),
                           keyboardType: TextInputType.number,
                           textAlignVertical: TextAlignVertical.center,
-                          textAlign: TextAlign.center,maxLength: 1,
+                          textAlign: TextAlign.center,
+                          maxLength: 1,
                           controller: controller4,
                           cursorHeight: 25,
                           cursorWidth: 3,
@@ -257,17 +261,14 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                       height: 40,
                       child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly,
+                            FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
                           decoration: InputDecoration(
-                            counter: Offstage(),
-                            counterText: ""
-                          ),
+                              counter: Offstage(), counterText: ""),
                           textAlignVertical: TextAlignVertical.center,
                           textAlign: TextAlign.center,
                           keyboardType: TextInputType.number,
-                          
                           maxLength: 1,
                           controller: controller5,
                           cursorHeight: 25,

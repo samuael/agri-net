@@ -1,8 +1,11 @@
-import "libs.dart" ;
+import 'package:mobile/messages/screens/Login_Page.dart';
 
+import "libs.dart";
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: LoginPage(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.brown,
       ),
       initialRoute: AuthScreen.RouteName,
+<<<<<<< HEAD
       onGenerateRoute: (setting){
         switch(setting.name){
           case RegistrationScreen.RouteName:{
@@ -32,9 +36,13 @@ class MyApp extends StatelessWidget {
               return ConfirmationScreen(phone);
             });
           }
+=======
+      routes: {
+        AuthScreen.RouteName: (context) {
+          return AuthScreen();
+>>>>>>> 38a3a305bb50c6d60d7df7867d273b966a8e5a16
         }
       },
     );
   }
 }
-

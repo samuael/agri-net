@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/auth/widgets/agri-info-drawer.dart';
 import '../../libs.dart';
 
 class AuthScreen1 extends StatefulWidget {
@@ -31,7 +32,7 @@ class _AuthScreenState extends State<AuthScreen1> {
           elevation: 0,
           centerTitle: true,
         ),
-        drawer: HomeNavigationDrawer(),
+        drawer: Agri_info_NavigationDrawer(),
         body: ListView(children: [
           Column(children: [
             ProductItem(),

@@ -1,4 +1,6 @@
-import 'auth/screens/product1.dart';
+// import 'auth/screens/product1.dart';
+import 'auth/screens/subScreen.dart';
+import 'auth/widgets/subscription.dart';
 import "libs.dart";
 
 void main() {
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
           case RegistrationScreen.RouteName:
             {
               return MaterialPageRoute(builder: (context) {
-                return AuthScreen1();
+                return SubScreen1();
               });
             }
           case AuthScreen.RouteName:

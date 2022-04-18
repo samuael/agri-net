@@ -76,6 +76,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                   ),
                 ),
               ),
+              //SubscriptionPage
+              //_SubscriptionPageState
               suffixIcon: Icon(Icons.phone),
               border: OutlineInputBorder(
                 borderSide: BorderSide(

@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Agri-Net',
       theme: ThemeData(
-        primarySwatch: Colors.brown,
-      ),
+          // primarySwatch: Colors.primaries, //  MaterialColor(primary, swatch),
+          ),
       initialRoute: AuthScreen.RouteName,
       onGenerateRoute: (setting) {
         switch (setting.name) {

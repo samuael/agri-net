@@ -21,6 +21,8 @@ func Route(
 	superadminhandler ISuperadminHandler,
 	producthandler IProductHandler,
 	communicationHandler message_broadcast_service.IClientConnetionHandler,
+	messagehandler IMessageHandler,
+	infoadminhandler IInfoadminHandler,
 ) *gin.Engine {
 	router := gin.Default()
 	router.Use(cors.New(cors.Config{
@@ -35,16 +37,21 @@ func Route(
 	router.POST("/api/subscription/login", subscriberhandler.SubscriberLoginWithPhone)
 	router.POST("/api/subscription/confirm", subscriberhandler.ConfirmLoginSubscription)
 	// -------------------------------------------------------------------------------
-	router.POST("/api/superadmin/login", superadminhandler.SuperadminLogin)
+	router.POST("/api/login", superadminhandler.AdminsLogin)
 
 	router.POST("/api/superadmin/product/new", rules.Authenticated(), rules.Authorized(), producthandler.CreateProductInstance)
 	router.GET("/api/product", producthandler.GetProductByID)
 	router.GET("/api/products", producthandler.GetProducts)
 	router.GET("/api/product/subscribe", rules.AuthenticatedSubscriber(), producthandler.SubscribeForProduct)
 	router.GET("/api/product/unsubscribe", rules.AuthenticatedSubscriber(), producthandler.UnsubscriberForProduct)
+	router.GET("/api/product/search", producthandler.SearchProduct)
 
-	// router.GET("/api/connections/", rules.Authenticated(), func(c *gin.Context) gin.HandlerFunc {
-	// })
+	router.GET("/api/connection/subscriber", rules.AuthenticatedSubscriber(), communicationHandler.SubscriberHandleWebsocketConnection)
+	router.GET("/api/connection/admins", rules.Authenticated(), communicationHandler.AdminsHandleWebsocketConnection)
+
+	router.GET("/api/messages", rules.AuthenticatedSubscriber(), messagehandler.GetRecentMessages)
+	router.POST("/api/infoadmin/new", rules.Authenticated(), infoadminhandler.Registerinfoadmin)
+	router.PUT("/api/infoadmin/product", rules.Authenticated(), rules.Authorized(), producthandler.UpdateProduct)
 
 	router.RouterGroup.Use(FilterDirectory())
 	{

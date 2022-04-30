@@ -21,7 +21,8 @@ const (
 	SUPERADMIN = "superadmin"
 	SUBSCRIBER = "subscriber"
 	// ADMIN ...
-	ADMIN = "admin"
+	ADMIN      = "admin"
+	INFO_ADMIN = "infoadmin"
 	// SECRETARY ...
 	SECRETARY = "secretary"
 	// STUDENT

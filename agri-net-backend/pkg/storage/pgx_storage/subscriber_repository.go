@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/jackc/pgx/pgxpool"
+	"github.com/jackc/pgx/v4/pgxpool"
 	"github.com/samuael/agri-net/agri-net-backend/pkg/constants/model"
 	"github.com/samuael/agri-net/agri-net-backend/pkg/constants/state"
 	"github.com/samuael/agri-net/agri-net-backend/pkg/subscriber"
@@ -131,6 +131,16 @@ func (repo *SubscriberRepo) GetPendingLoginSubscriptionByPhone(ctx context.Conte
 	subscriber := &model.TempoLoginSubscriber{}
 	if er := repo.DB.QueryRow(ctx, "select id,phone,confirmation,unix from tempo_subscribers_login where phone=$1", phone).
 		Scan(&(subscriber.ID), &(subscriber.Phone), &(subscriber.Confirmation), &(subscriber.Unix)); er != nil {
+		return subscriber, state.STATUS_DBQUERY_ERROR, er
+	}
+	return subscriber, state.STATUS_OK, nil
+}
+
+func (repo *SubscriberRepo) GetSubscriberByID(ctx context.Context) (*model.Subscriber, int, error) {
+	subscriber := &model.Subscriber{}
+	id := ctx.Value("subscriber_id").(uint64)
+	if er := repo.DB.QueryRow(ctx, "select id,fullname,lang,role,phone,subscriptions from subscriber where id=$1", id).
+		Scan(&(subscriber.ID), &(subscriber.Fullname), &(subscriber.Lang), &(subscriber.Role), &(subscriber.Phone), &(subscriber.Subscriptions)); er != nil {
 		return subscriber, state.STATUS_DBQUERY_ERROR, er
 	}
 	return subscriber, state.STATUS_OK, nil

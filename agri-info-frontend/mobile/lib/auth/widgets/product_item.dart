@@ -2,6 +2,7 @@ import '../../libs.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProductItem extends StatefulWidget {
+  static const String RouteName = "/This/is/the/product/mnamn";
   const ProductItem({Key? key}) : super(key: key);
 
   @override

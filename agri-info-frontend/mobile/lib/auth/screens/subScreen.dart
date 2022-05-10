@@ -5,7 +5,7 @@ import 'package:mobile/auth/widgets/subscription.dart';
 import '../../libs.dart';
 
 class SubScreen1 extends StatefulWidget {
-  static const String RouteName = "/auth_screen";
+  static const String RouteName = "/auth_screen2";
 
   const SubScreen1({Key? key}) : super(key: key);
 

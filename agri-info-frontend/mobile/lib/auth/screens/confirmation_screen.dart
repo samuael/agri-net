@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:mobile/auth/screens/product1.dart';
 
 import "../../libs.dart";
 
@@ -308,18 +309,23 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                 ),
               ],
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Container(
-                color: Theme.of(context).primaryColor,
-                padding: EdgeInsets.symmetric(horizontal: 105, vertical: 10),
-                child: Text(
-                  " Confirm ",
-                  style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(AuthScreen1.RouteName);
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  color: Theme.of(context).primaryColor,
+                  padding: EdgeInsets.symmetric(horizontal: 105, vertical: 10),
+                  child: Text(
+                    " Confirm ",
+                    style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),

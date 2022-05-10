@@ -3,7 +3,7 @@ import 'package:mobile/auth/widgets/agri-info-drawer.dart';
 import '../../libs.dart';
 
 class AuthScreen1 extends StatefulWidget {
-  static const String RouteName = "/auth_screen";
+  static const String RouteName = "/auth_screen1";
 
   const AuthScreen1({Key? key}) : super(key: key);
 
@@ -32,7 +32,7 @@ class _AuthScreenState extends State<AuthScreen1> {
           elevation: 0,
           centerTitle: true,
         ),
-        drawer: Agri_info_NavigationDrawer(),
+        drawer: Agri_info_NavigationDrawer(), //Agri_info_NavigationDrawer(),
         body: ListView(children: [
           Column(children: [
             ProductItem(),

@@ -1,5 +1,7 @@
 // import 'auth/screens/product1.dart';
+import 'auth/screens/product1.dart';
 import 'auth/screens/subScreen.dart';
+import 'auth/screens/message_screen.dart';
 import 'auth/widgets/subscription.dart';
 import "libs.dart";
 
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   static const int swatch = 0xFF21ABA5;
   @override
   Widget build(BuildContext context) {
+    // Navigator.of(context).pushNamed(ProductItem.RouteName);
     return MaterialApp(
       title: 'Agri-Net',
       theme: ThemeData(
@@ -27,29 +30,54 @@ class MyApp extends StatelessWidget {
           900: Color(swatch),
         }),
       ),
-      initialRoute: AuthScreen.RouteName,
+      initialRoute: Message_Screen.RouteName,
       onGenerateRoute: (setting) {
         switch (setting.name) {
-          case RegistrationScreen.RouteName:
+          // case RegistrationScreen.RouteName:
+          //   {
+          //     return MaterialPageRoute(builder: (context) {
+          //       return RegistrationScreen();
+          //     });
+          //   }
+          // case AuthScreen.RouteName:
+          //   {
+          //     return MaterialPageRoute(builder: (context) {
+          //       return AuthScreen();
+          //     });
+          //   }
+          case Message_Screen.RouteName:
             {
               return MaterialPageRoute(builder: (context) {
-                return SubScreen1();
+                return Message_Screen();
               });
             }
-          case AuthScreen.RouteName:
+          case AuthScreen1.RouteName:
             {
               return MaterialPageRoute(builder: (context) {
-                return AuthScreen();
+                return AuthScreen1();
               });
             }
-          case ConfirmationScreen.RouteName:
-            {
-              return MaterialPageRoute(builder: (context) {
-                final String phone =
-                    (setting.arguments as Map<String, dynamic>)["phone"];
-                return ConfirmationScreen(phone);
-              });
-            }
+          // case ConfirmationScreen.RouteName:
+          //   {
+          //     return MaterialPageRoute(builder: (context) {
+          //       final String phone =
+          //           (setting.arguments as Map<String, dynamic>)["phone"];
+          //       return ConfirmationScreen(phone);
+          //     });
+          //   }
+          // case SubScreen1.RouteName:
+          //   {
+          //     return MaterialPageRoute(builder: (context) {
+          //       return SubScreen1();
+          //     });
+          //   }
+
+          // case ProductItem.RouteName:
+          //   {
+          //     return MaterialPageRoute(builder: (context) {
+          //       return ProductItem();
+          //     });
+          // }
         }
       },
     );

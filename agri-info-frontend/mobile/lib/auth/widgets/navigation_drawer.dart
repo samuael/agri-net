@@ -7,6 +7,7 @@ class HomeNavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
+        color: Theme.of(context).primaryColor,
         child: Column(
           children: [
             Container(
@@ -39,10 +40,22 @@ class HomeNavigationDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(Icons.settings, color: Colors.white),
               title: Text(
                 "Naty",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings, color: Colors.white),
+              title:
+                  Text("subscription", style: TextStyle(color: Colors.white)),
+            ),
+            ListTile(
+              leading: Icon(Icons.list, color: Colors.white),
+              title: Text("Naty", style: TextStyle(color: Colors.white)),
             ),
             ListTile(
               leading: Icon(Icons.settings),
@@ -51,21 +64,12 @@ class HomeNavigationDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.settings),
+              leading: Icon(Icons.settings, color: Colors.white),
               title: Text(
                 "Naty",
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                "Naty",
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                "Naty",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
               ),
             ),
           ],

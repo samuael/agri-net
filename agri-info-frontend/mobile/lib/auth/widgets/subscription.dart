@@ -42,7 +42,7 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            padding: EdgeInsets.symmetric(horizontal: 30),
                             child: Text("የምርት ቦታ :",
                                 style: TextStyle(
                                     fontSize: 13,
@@ -55,14 +55,14 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                     ),
                     Container(
                       padding: EdgeInsets.symmetric(vertical: 8),
-                      margin: EdgeInsets.symmetric(horizontal: 120),
+                      margin: EdgeInsets.symmetric(horizontal: 30),
                       child: Row(
                         children: [
                           Text("ዋጋ :",
                               style: TextStyle(
                                   fontSize: 13, fontWeight: FontWeight.bold)),
                           Container(
-                            padding: EdgeInsets.symmetric(horizontal: 45),
+                            padding: EdgeInsets.symmetric(horizontal: 40),
                             child: Text(
                               "1000 ብር",
                               style: TextStyle(fontSize: 13),

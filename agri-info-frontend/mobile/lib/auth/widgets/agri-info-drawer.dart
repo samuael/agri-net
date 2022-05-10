@@ -124,7 +124,7 @@ class Agri_info_NavigationDrawer extends StatelessWidget {
                                 child: Text(
                                   "Logout",
                                   style: TextStyle(
-                                      fontSize: 21,
+                                      fontSize: 22,
                                       color: Colors.white,
                                       fontFamily:
                                           "Roboto"), //"Times New Roman"),

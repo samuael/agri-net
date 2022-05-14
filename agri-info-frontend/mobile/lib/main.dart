@@ -18,13 +18,19 @@ class MyApp extends StatelessWidget {
           case RegistrationScreen.RouteName:
             {
               return MaterialPageRoute(builder: (context) {
-                return RegistrationScreen();
+                return const RegistrationScreen();
               });
             }
           case AuthScreen.RouteName:
             {
               return MaterialPageRoute(builder: (context) {
-                return AuthScreen();
+                return const AuthScreen();
+              });
+            }
+          case ProductHomeScreen.RouteName:
+            {
+              return MaterialPageRoute(builder: (context) {
+                return const ProductHomeScreen();
               });
             }
           case ConfirmationScreen.RouteName:

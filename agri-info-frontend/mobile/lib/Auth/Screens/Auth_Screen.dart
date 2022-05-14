@@ -84,7 +84,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         children: [
                           Positioned(
                             child: Container(
-                              padding: EdgeInsets.only(top: 60),
+                              padding: const EdgeInsets.only(top: 60),
                               height: MediaQuery.of(context).size.height * 0.55,
                               width: MediaQuery.of(context).size.width * 0.9,
                               child: Center(

@@ -54,7 +54,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
               child: Container(
                 height: MediaQuery.of(context).size.width * 0.7,
                 width: MediaQuery.of(context).size.width * 0.7,
-                margin: EdgeInsets.symmetric(
+                margin: const EdgeInsets.symmetric(
                   vertical: 10,
                 ),
                 child: Center(
@@ -66,7 +66,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                         child: Center(
                           child: Text(
                             "${duration.inMinutes}:${duration.inSeconds % 60}",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             ),
@@ -135,10 +135,10 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           cursorHeight: 25,
                           cursorWidth: 3,
                           maxLengthEnforced: true,
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             counter: Offstage(),
                           ),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
                           )),
@@ -147,7 +147,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 5,
                       ),
                       decoration: BoxDecoration(
@@ -161,7 +161,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             counter: Offstage(),
                           ),
                           keyboardType: TextInputType.number,
@@ -171,7 +171,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           controller: controller2,
                           cursorHeight: 25,
                           cursorWidth: 3,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
                           )),
@@ -180,7 +180,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 5,
                       ),
                       decoration: BoxDecoration(
@@ -194,7 +194,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             counter: Offstage(),
                           ),
                           keyboardType: TextInputType.number,
@@ -204,7 +204,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           controller: controller3,
                           cursorHeight: 25,
                           cursorWidth: 3,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
                           )),
@@ -227,7 +227,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             counter: Offstage(),
                           ),
                           keyboardType: TextInputType.number,
@@ -237,7 +237,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           controller: controller4,
                           cursorHeight: 25,
                           cursorWidth: 3,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
                           )),
@@ -246,7 +246,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                   Expanded(
                     flex: 1,
                     child: Container(
-                      margin: EdgeInsets.symmetric(
+                      margin: const EdgeInsets.symmetric(
                         horizontal: 5,
                       ),
                       decoration: BoxDecoration(
@@ -260,7 +260,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(1),
                           ],
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                               counter: Offstage(), counterText: ""),
                           textAlignVertical: TextAlignVertical.center,
                           textAlign: TextAlign.center,
@@ -269,7 +269,7 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
                           controller: controller5,
                           cursorHeight: 25,
                           cursorWidth: 3,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 25,
                           )),
@@ -280,8 +280,9 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: Text(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: const Text(
                     "Don't recieve the code?",
                     style: TextStyle(
                       fontStyle: FontStyle.italic,

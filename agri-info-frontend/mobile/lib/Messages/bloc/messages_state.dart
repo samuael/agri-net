@@ -8,3 +8,4 @@ abstract class MessagesState extends Equatable {
 }
 
 class MessagesInitial extends MessagesState {}
+class MessageLoaded extends MessagesState{}

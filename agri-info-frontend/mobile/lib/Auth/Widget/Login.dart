@@ -122,6 +122,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
               onPressed: () async {
                 // checking the validity of input values
+                Navigator.pushNamed(context, ProductHomeScreen.RouteName);
               },
               icon: Icon(Icons.login),
               label: Text(

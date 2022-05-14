@@ -1,7 +1,3 @@
-
-
-
-
 import '../../libs.dart';
 
 class AuthenticationDataProvider {
@@ -73,7 +69,7 @@ class AuthenticationDataProvider {
 
   //     }
   //   } catch (e, a) {
-  //     return 
+  //     return
   //   }
   // }
 }

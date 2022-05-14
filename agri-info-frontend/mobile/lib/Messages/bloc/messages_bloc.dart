@@ -1,6 +1,6 @@
 import '../../libs.dart';
 
-class MessagesBloc extends Bloc<MessagesEvent, MessagesState> {
+class MessagesBloc extends Bloc<MessageEvent, MessagesState> {
   MessagesBloc() : super(MessagesInitial());
 
   @override

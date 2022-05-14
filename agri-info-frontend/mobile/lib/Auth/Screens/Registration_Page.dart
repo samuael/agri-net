@@ -25,7 +25,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           " Registration ",
           style: TextStyle(
             fontWeight: FontWeight.bold,
@@ -39,7 +39,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding: EdgeInsets.all(5),
+              margin: const EdgeInsets.only(top: 5),
+              padding: const EdgeInsets.all(5),
               child: Text(
                 " To Register, please provide your information ",
                 style: TextStyle(
@@ -52,12 +53,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
-                vertical: 10,
+                vertical: 8,
               ),
-              child: Text(
-                "  ",
+              child: const Text(
+                " ",
                 style: TextStyle(
                   color: Colors.green,
                   fontWeight: FontWeight.bold,
@@ -67,10 +68,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(
+              margin: const EdgeInsets.symmetric(
                 vertical: 20,
               ),
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               child: TextField(
@@ -78,10 +79,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 keyboardType: TextInputType.number,
                 cursorColor: Theme.of(context).primaryColorLight,
                 controller: phoneController,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: "Full Name",
                   fillColor: Colors.lightBlue,
                   hoverColor: Colors.lightBlue,
@@ -101,7 +102,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 20,
               ),
               child: TextField(
@@ -109,7 +110,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 keyboardType: TextInputType.number,
                 cursorColor: Theme.of(context).primaryColorLight,
                 controller: phoneController,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
                 decoration: InputDecoration(
@@ -117,16 +118,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   fillColor: Colors.lightBlue,
                   hoverColor: Colors.lightBlue,
                   prefix: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
-                    child: Text(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: const Text(
                       "+251",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  suffixIcon: Icon(Icons.phone),
-                  border: OutlineInputBorder(
+                  suffixIcon: const Icon(Icons.phone),
+                  border: const OutlineInputBorder(
                     borderSide: BorderSide(
                       color: Colors.lightBlue,
                       style: BorderStyle.none,
@@ -141,24 +142,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(
-                left: 20,
-              ),
-              alignment: AlignmentGeometry.lerp(
-                  Alignment.topLeft, Alignment.center, 0),
-              child: Text(
-                " Job Title ",
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Moms TypeWriter",
-                  fontSize: 17,
-                  // fontSize: 18
-                ),
-              ),
-            ),
-            Container(
               padding: EdgeInsets.symmetric(
                 horizontal: 40,
               ),
@@ -166,145 +149,157 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: Container(
-                      child: Column(
-                        children: [
-                          Row(children: [
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(5),
+                          margin: const EdgeInsets.only(top: 10),
+                          alignment: AlignmentGeometry.lerp(
+                              Alignment.topLeft, Alignment.center, 0),
+                          child: Text(
+                            " Job Title ",
+                            style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: "Moms TypeWriter",
+                              fontSize: 17,
+                              // fontSize: 18
+                            ),
+                          ),
+                        ),
+                        Row(children: [
+                          Checkbox(
+                              value: roleFarmer,
+                              onChanged: (values) {
+                                setState(() {
+                                  this.roleFarmer = values!;
+                                  if (!this.roleFarmer) {
+                                    this.roleAll = false;
+                                  }
+                                  checkAllRolesIfApplicable();
+                                });
+                              }),
+                          const Text("Farmer"),
+                        ]),
+                        Row(
+                          children: [
                             Checkbox(
-                                value: roleFarmer,
+                                value: roleMerchant,
                                 onChanged: (values) {
                                   setState(() {
-                                    this.roleFarmer = values!;
-                                    if (!this.roleFarmer) {
+                                    this.roleMerchant = values!;
+                                    if (!this.roleMerchant) {
                                       this.roleAll = false;
                                     }
                                     checkAllRolesIfApplicable();
                                   });
                                 }),
-                            Text("Farmer"),
-                          ]),
-                          Row(
-                            children: [
-                              Checkbox(
-                                  value: roleMerchant,
-                                  onChanged: (values) {
-                                    setState(() {
-                                      this.roleMerchant = values!;
-                                      if (!this.roleMerchant) {
-                                        this.roleAll = false;
-                                      }
-                                      checkAllRolesIfApplicable();
-                                    });
-                                  }),
-                              Text("Merchant"),
-                            ],
-                          ),
-                          Row(children: [
+                            Text("Merchant"),
+                          ],
+                        ),
+                        Row(children: [
+                          Checkbox(
+                              value: roleConsumer,
+                              onChanged: (values) {
+                                setState(() {
+                                  this.roleConsumer = values!;
+                                  if (!this.roleConsumer) {
+                                    this.roleAll = false;
+                                  }
+                                  checkAllRolesIfApplicable();
+                                });
+                              }),
+                          Text("Consumer"),
+                        ]),
+                        Row(
+                          children: [
                             Checkbox(
-                                value: roleConsumer,
+                                value: this.roleAll,
                                 onChanged: (values) {
                                   setState(() {
-                                    this.roleConsumer = values!;
-                                    if (!this.roleConsumer) {
-                                      this.roleAll = false;
+                                    this.roleAll = values!;
+                                    if (roleAll) {
+                                      this.roleConsumer = roleAll;
+                                      this.roleFarmer = roleAll;
+                                      this.roleMerchant = roleAll;
                                     }
-                                    checkAllRolesIfApplicable();
                                   });
                                 }),
-                            Text("Consumer"),
-                          ]),
-                          Row(
-                            children: [
-                              Checkbox(
-                                  value: this.roleAll,
-                                  onChanged: (values) {
-                                    setState(() {
-                                      this.roleAll = values!;
-                                      if (roleAll) {
-                                        this.roleConsumer = roleAll;
-                                        this.roleFarmer = roleAll;
-                                        this.roleMerchant = roleAll;
-                                      }
-                                    });
-                                  }),
-                              Text("All"),
-                            ],
-                          ),
-                        ],
-                      ),
+                            Text("All"),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                   Expanded(
                     flex: 1,
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                "Langauge",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FontStyle.italic,
-                                ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Langauge",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
                               ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 1,
-                                  groupValue: groupValue,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      this.groupValue = 1;
-                                    });
-                                  }),
-                              Text("አማርኛ")
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 2,
-                                  groupValue: groupValue,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      this.groupValue = 2;
-                                    });
-                                  }),
-                              Text("Oromiffa")
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 3,
-                                  groupValue: groupValue,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      this.groupValue = 3;
-                                    });
-                                  }),
-                              Text("ትግርኛ")
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                  value: 4,
-                                  groupValue: groupValue,
-                                  onChanged: (val) {
-                                    setState(() {
-                                      this.groupValue = 4;
-                                    });
-                                  }),
-                              Text("English")
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                                value: 1,
+                                groupValue: groupValue,
+                                onChanged: (val) {
+                                  setState(() {
+                                    this.groupValue = 1;
+                                  });
+                                }),
+                            Text("አማርኛ")
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                                value: 2,
+                                groupValue: groupValue,
+                                onChanged: (val) {
+                                  setState(() {
+                                    this.groupValue = 2;
+                                  });
+                                }),
+                            Text("Oromiffa")
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                                value: 3,
+                                groupValue: groupValue,
+                                onChanged: (val) {
+                                  setState(() {
+                                    this.groupValue = 3;
+                                  });
+                                }),
+                            Text("ትግርኛ")
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Radio(
+                                value: 4,
+                                groupValue: groupValue,
+                                onChanged: (val) {
+                                  setState(() {
+                                    this.groupValue = 4;
+                                  });
+                                }),
+                            Text("English")
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -358,6 +353,4 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       });
     }
   }
-
-  
 }

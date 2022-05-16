@@ -22,6 +22,7 @@ class _ProductScreenAppBarDrawerState extends State<ProductScreenAppBarDrawer> {
       elevation: 5,
       child: Container(
         // color: appBarTheme,
+
         width: we,
         height: he / 11.5,
         child: Padding(
@@ -29,14 +30,14 @@ class _ProductScreenAppBarDrawerState extends State<ProductScreenAppBarDrawer> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AgriNetLogo(),
+              const AgriNetLogo(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Row(
                     children: [
                       Container(child: LanguageDropDown()),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       ProductAccountPage(),
@@ -54,7 +55,7 @@ class _ProductScreenAppBarDrawerState extends State<ProductScreenAppBarDrawer> {
   Widget LanguageDropDown() {
     List lang = ["Amh", "Eng"];
     return DropdownButton(
-        hint:const Text("lang"),
+        hint: const Text("lang"),
         items: lang
             .map((item) => DropdownMenuItem(value: item, child: new Text(item)))
             .toList(),

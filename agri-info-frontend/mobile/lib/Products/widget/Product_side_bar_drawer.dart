@@ -123,8 +123,7 @@ class _CollapsingSideBarDrawerState extends State<CollapsingSideBarDrawer>
                         break;
                       case "My Stores":
                         {
-                          Navigator.pushNamed(
-                              context, ProductHomeScreen.RouteName);
+                          Navigator.pushNamed(context, ChatHomePage.RouteName);
                         }
                         break;
                       default:

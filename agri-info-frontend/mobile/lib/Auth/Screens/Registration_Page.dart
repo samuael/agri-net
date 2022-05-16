@@ -1,7 +1,7 @@
 import "../../libs.dart";
 
 class RegistrationScreen extends StatefulWidget {
-  static const String RouteName = "/subscriber/registration/page";
+  static const String RouteName = "/registration/page";
 
   const RegistrationScreen({Key? key}) : super(key: key);
 

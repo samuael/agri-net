@@ -123,9 +123,10 @@ class _LoginWidgetState extends State<LoginWidget> {
               onPressed: () async {
                 // checking the validity of input values
                 Navigator.pushNamed(context, ProductHomeScreen.RouteName);
+                // Navigator.pushNamed(context, ProductHomeScreen.RouteName);
               },
-              icon: Icon(Icons.login),
-              label: Text(
+              icon: const Icon(Icons.login),
+              label: const Text(
                 " Login ",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -134,7 +135,7 @@ class _LoginWidgetState extends State<LoginWidget> {
             )),
         GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed(RegistrationScreen.RouteName);
+            Navigator.of(context).pushNamed(ChatHomePage.RouteName);
           },
           child: Container(
             padding: EdgeInsets.all(10),

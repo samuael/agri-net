@@ -1,7 +1,7 @@
 import '../../libs.dart';
 
 class ProductHomeScreen extends StatefulWidget {
-  static const String RouteName = "homescreen";
+  static const String RouteName = "/homescreen";
   const ProductHomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -18,12 +18,15 @@ class _ProductHomeScreenState extends State<ProductHomeScreen> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: const ProductScreenAppBarDrawer(),
+        appBar: AppBar(
+          title: const Text("Product Page"),
+          actions: const <Widget>[ProductScreenAppBarDrawer()],
+        ),
         body: Center(
           child: Container(
             // height: double.infinity,
             child: Row(
-              children: [
+              children: const [
                 CollapsingSideBarDrawer(),
                 // HomePage()
                 ProductScreenBody(),
@@ -31,13 +34,6 @@ class _ProductHomeScreenState extends State<ProductHomeScreen> {
             ),
           ),
         ),
-        // bottomNavigationBar: BottomAppBar(
-        //     child: Row(
-        //   children: [
-        //     Footer(),
-        //   ],
-        // )),
-        // persistentFooterButtons: [Footer()],
       ),
     );
   }

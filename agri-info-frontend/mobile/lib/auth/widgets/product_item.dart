@@ -16,11 +16,12 @@ class _ProductItemState extends State<ProductItem> {
       borderRadius: BorderRadius.circular(20),
       child: Card(
         elevation: 6,
-        color: Color(0xFFEFFBFF),
+        color: Colors.green.shade200,
         child: Container(
+          color: Colors.white,
           //alignment: Alignment.center,
           // height: 150,
-          width: MediaQuery.of(context).size.width,
+          width: 350,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,

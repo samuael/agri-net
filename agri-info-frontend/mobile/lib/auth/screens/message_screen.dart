@@ -1,5 +1,10 @@
+import 'package:mobile/auth/screens/product1.dart';
 import 'package:mobile/auth/widgets/agri-info-drawer.dart';
+import 'package:mobile/auth/widgets/buyer_detail.dart';
+import 'package:mobile/auth/widgets/seller_detail.dart';
 import 'package:mobile/auth/widgets/messages.dart';
+import 'package:mobile/auth/widgets/seller_detail.dart';
+import 'package:mobile/auth/widgets/update_product.dart';
 
 import '../../libs.dart';
 
@@ -177,14 +182,17 @@ class _MessageState_Screen extends State<Message_Screen> {
               scrollDirection: Axis.vertical,
               child: Column(
                 children: [
-                  Message(),
-                  Message(),
-                  Message(),
-                  Message(),
-                  Message(),
-                  Message(),
-                  Message(),
-                  Message(),
+                  ProductItem(),
+                  // seller_Detail(),
+                  //update_Product(),
+                  //buyer_Detail(),
+                  // Message(),
+                  // Message(),
+                  // Message(),
+                  // Message(),
+                  // Message(),
+                  // Message(),
+                  // Message(),
                 ],
               ),
             ),

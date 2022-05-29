@@ -13,34 +13,58 @@ class Agri_info_NavigationDrawer extends StatelessWidget {
         color: Color(0xff00000),
         child: Column(
           children: [
-            Container(
-              height: 200,
-              color: Color(0xff21aba5),
-              child: Column(
-                children: [
-                  Container(
-                    color: Color(0xffffffff),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(100),
+            Stack(
+              children: [
+                Container(
+                  height: 200,
+                  color: Color(0xff21aba5),
+                  child: Column(
+                    children: [
+                      Container(
+                        color: Color(0xffffffff),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(100),
+                          ),
+                          child: Container(
+                            color: Color(0xFF21aba5),
+                            height: 100,
+                          ),
+                        ),
                       ),
-                      child: Container(
-                        color: Color(0xFF21aba5),
-                        height: 100,
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(100),
+                        ),
+                        child: Container(
+                          height: 100,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(100),
-                    ),
-                    child: Container(
-                      height: 100,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 120, vertical: 40),
+                  child: CircleAvatar(
+                      radius: 60,
+                      backgroundColor: Colors.grey.shade200,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.asset("assets/image_assets/user1.jpg"),
+                      )),
+                ),
+                // backgroundImage:
+                //     AssetImage('assets/image_assets/user1.jpg')),
+                Container(
+                    margin: EdgeInsets.only(top: 135, left: 90),
+                    width: MediaQuery.of(context).size.width,
+                    child: Text(
+                      "nathyalem@aait.com",
+                      style: TextStyle(
+                          fontFamily: "Roboto", fontStyle: FontStyle.italic),
+                    )),
+              ],
             ),
             Container(
               color: Color(0xff21aba5),
@@ -75,7 +99,8 @@ class Agri_info_NavigationDrawer extends StatelessWidget {
                                   style: TextStyle(
                                       fontSize: 18,
                                       color: Colors.white,
-                                      fontFamily: "Roboto"),
+                                      fontFamily: "Roboto",
+                                      fontWeight: FontWeight.bold),
                                 ),
                               )
                             ],
@@ -100,7 +125,8 @@ class Agri_info_NavigationDrawer extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 18,
                                   color: Colors.white,
-                                  fontFamily: "Roboto"),
+                                  fontFamily: "Roboto",
+                                  fontWeight: FontWeight.bold),
                             ),
                           )
                         ],
@@ -124,10 +150,11 @@ class Agri_info_NavigationDrawer extends StatelessWidget {
                                 child: Text(
                                   "Logout",
                                   style: TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       color: Colors.white,
-                                      fontFamily:
-                                          "Roboto"), //"Times New Roman"),
+                                      fontFamily: "Roboto",
+                                      fontWeight: FontWeight
+                                          .bold), //"Times New Roman"),
                                 ))
                           ],
                         )),

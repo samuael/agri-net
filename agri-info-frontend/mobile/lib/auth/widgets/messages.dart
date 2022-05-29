@@ -10,12 +10,20 @@ class Message extends StatefulWidget {
 class _MessageState extends State<Message> {
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Card(
-        elevation: 2,
+    return Card(
+      margin: EdgeInsets.only(top: 15, left: 10, right: 10),
+      color: Colors.brown,
+      elevation: 7,
+      shadowColor: Colors.black,
+      child: ClipRRect(
+        borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20),
+            topLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20)),
         child: Container(
+          //margin: EdgeInsets.only(top: 10, left: 5, right: 5),
           // height: 100,
+
           color: Theme.of(context).canvasColor,
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -24,13 +32,20 @@ class _MessageState extends State<Message> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 8),
-                    child: Text(
-                      "Abebe Kebede",
-                      style: TextStyle(
-                          fontFamily: "Roboto", fontWeight: FontWeight.bold),
-                    ),
+                  Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 8),
+                        child: Container(
+                          child: Text(
+                            "Abebe Kebede",
+                            style: TextStyle(
+                                fontFamily: "Roboto",
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Text(
                     "bla bala blalalalla ladkdjfladl a kakffiw asldjakk ajkdjfiw dkf iai isikf oskjf dkfj",

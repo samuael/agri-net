@@ -8,13 +8,13 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   List<ChatUsers> chatUsers = [
     ChatUsers(
-        name: "Jane Russel",
-        messageText: "Awesome Setup",
+        name: "Chala Debela",
+        messageText: "Bekkolo 50 kuntal alegn tfelgaleh",
         imageURL: "images/userImage1.jpeg",
         time: "Now"),
     ChatUsers(
-        name: "Glady's Murphy",
-        messageText: "That's Great",
+        name: "Bekele Chanie",
+        messageText: "20 kuntal teff tfelgalh",
         imageURL: "images/userImage2.jpeg",
         time: "Yesterday"),
     ChatUsers(
@@ -55,21 +55,27 @@ class _ChatPageState extends State<ChatPage> {
       appBar: AppBar(
         actions: <Widget>[
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SafeArea(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 16, right: 16, top: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
+                      // Container(
+                      //   width: MediaQuery.of(context).size.width * 0.1,
+                      // ),
                       const Text(
                         "Conversations",
                         style: TextStyle(
                             fontSize: 32, fontWeight: FontWeight.bold),
                       ),
                       Container(
+                        width: MediaQuery.of(context).size.width * 0.3,
+                      ),
+                      Container(
                         padding: const EdgeInsets.only(
-                            left: 8, right: 8, top: 2, bottom: 2),
+                            left: 20, right: 8, top: 2, bottom: 2),
                         height: 20,
                         // decoration: BoxDecoration(
                         //   borderRadius: BorderRadius.circular(30),

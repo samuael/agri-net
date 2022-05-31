@@ -25,8 +25,9 @@ class _ChatHomePageState extends State<ChatHomePage> {
             label: ("Chats"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.group_work),
+            icon: Icon(Icons.group_work,),
             label: ("Products"),
+            
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_box),

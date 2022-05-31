@@ -30,8 +30,12 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(
                 builder: ((context) => const ChatHomePage()));
           case ChatDetailPage.RouteName:
+            final args = setting.arguments as ScreenArguments;
             return MaterialPageRoute(
-                builder: (context) => const ChatDetailPage());
+                builder: (context) => ChatDetailPage(
+                      userName: args.UserName,
+                      isActive: true,
+                    ));
           default:
             {
               return MaterialPageRoute(

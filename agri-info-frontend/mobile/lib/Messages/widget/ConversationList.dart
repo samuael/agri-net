@@ -1,7 +1,7 @@
 import '../../libs.dart';
 
 class ConversationList extends StatefulWidget {
-  String name;
+  final String name;
   String messageText;
   String imageUrl;
   String time;
@@ -19,9 +19,17 @@ class ConversationList extends StatefulWidget {
 class _ConversationListState extends State<ConversationList> {
   @override
   Widget build(BuildContext context) {
+    print(widget.name);
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, ChatDetailPage.RouteName);
+        Navigator.pushNamed(
+          context,
+          ChatDetailPage.RouteName,
+          arguments: ScreenArguments(
+            widget.name,
+            true,
+          ),
+        );
       },
       child: Container(
         padding:
